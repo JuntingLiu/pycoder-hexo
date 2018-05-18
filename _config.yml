@@ -13,7 +13,7 @@ timezone: Asia/Shanghai # 网站时区
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.pycoder.club
+url: http://blog.pycoder.club
 root: / # 网站根目录
 permalink: :year/:month/:day/:title/  # 文章的 永久链接 格式
 permalink_defaults: # 永久链接中各部分的默认值
@@ -80,6 +80,6 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: git@github.com:Twitchboy/pyCoder.git
+  repository: git@github.com:Twitchboy/pycoder-hexo.git
   branch: gh-pages
   message: "站点更新: {{ now('YYYY-MM-DD HH:mm:ss') }})"
