@@ -8,7 +8,7 @@ subtitle: 刘峻廷的博客 # 网站副标题
 description: 滴水穿石,记录点点滴滴，回望曲径通幽处。
 keywords: CSS,Js,ECMAScript,Node,Python,Linux,Webpack
 author: Junting # 作者
-language: zh-CN # 网站使用的语言
+language: zh-Hans # 网站使用的语言
 timezone: Asia/Shanghai # 网站时区
 
 # URL
@@ -74,7 +74,7 @@ pagination_dir: page # 分页目录
 # Extensions 扩展
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment 部署
 ## Docs: https://hexo.io/docs/deployment.html

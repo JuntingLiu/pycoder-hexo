@@ -123,11 +123,36 @@ $ git push origin gh-pages
 
 > ⚠️, 这里要是没有自定义域名，到时候部署 hexo 生成的静态文件的时候，站点访问静态资源会出现 404错误，你会发现路径出现问题。
 
-![pycoder](./assets/images/pycoder.png)
+![pyCoder](./assets/images/pycoder.png)
 
 ## 打造超酷的博客
 
+### 安装主题
 
+我选择的是比较火和流行的 `Next`主题：
+
+```git
+git clone https://github.com/iissnan/hexo-theme-next themes/next
+```
+
+### 启用主题
+
+需要在 `_config.yml`文件进行配置：
+
+```yml
+# Extensions 扩展
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+```
+
+### 设定主题
+
+Next是一个主题，三种外观，选您所好！挑选你看的顺眼的外观。
+
+```yml
+
+```
 
 ## 配置
 
