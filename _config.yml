@@ -6,7 +6,7 @@
 title: PyCoder # 网站标题
 subtitle: 刘峻廷的博客 # 网站副标题
 description: 滴水穿石,记录点点滴滴，回望曲径通幽处。
-keywords: CSS,Js,ECMAScript,Node,Python,Linux
+keywords: CSS,Js,ECMAScript,Node,Python,Linux,Webpack
 author: Junting # 作者
 language: zh-CN # 网站使用的语言
 timezone: Asia/Shanghai # 网站时区

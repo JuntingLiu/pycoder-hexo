@@ -71,6 +71,64 @@ $ npm install
 hexo server
 ```
 
+## 与GitHub关联上
+
+GitHub Page 实现方式，目前我知道的是三种：
+
+1. 创建一个跟你github账号相关的仓库，github默认给你的域名就是 `[username].github.io`
+2. 创建仓库，在 `setting` 中通过设置 Github page 的方式
+3. 创建 `gh-pages` 分支的方式
+
+这三种方式其实属于两种基本的 GitHub Pages 类型：用户/组织 Pages 和 项目 Pages。
+
+* 用户/组织 Pages 存在于一个特定的 GitHub Pages 文件专有库中。你将使用用户名来命名这个库，比如 `twitchbody.github.io`；**master分支** 上的内容将用于构建和发布你的 GitHub Pages 网页。
+* 不像用户和组织的 Pages，`项目 Pages` 是作为一个项目保存在同一个库中, 以作为项目介绍和文档存在。**gh-pages分支**用来构建和发布项目 Pages 网站。如果没有 自定义的域名，`项目 Pages` 网站将服务在用户 Pages 网站的子域名下：`username.github.io/projectName`。
+
+这里我使用方式3:
+
+建立一个项目 Pages，你需要在你的库中新建一个新的 orphan 分支（一个与现存分支没有共同的历史的分支）。
+
+```git
+# 进入项目
+$ cd pycoder-hexo
+
+# 创建分支
+$ git checkout --orphan gh-pages
+# 清除分支所有内容，保证是一个干净的分支
+$ git rm -rf .
+
+```
+
+然后，创建 `index.html` 文件做测试:
+
+```git
+# 创建
+$ echo "My Page!" > index.html
+
+$ git add .
+$ git commit -m "my first page"
+$ git push origin gh-pages
+
+```
+
+![gh-pages](./assets/images/gh-pages.png)
+
+接着，进入`setting`，设置下 `Github page`:
+
+![github_pages](./assets/images/github_page.png)
+
+使用自定义域名，需要你到域名服务商里进行增加一个域名解析：
+
+![domain](./assets/images/domain.png)
+
+> ⚠️, 这里要是没有自定义域名，到时候部署 hexo 生成的静态文件的时候，站点访问静态资源会出现 404错误，你会发现路径出现问题。
+
+![pycoder](./assets/images/pycoder.png)
+
+## 打造超酷的博客
+
+
+
 ## 配置
 
 站点相关信息的配置, 可以在 `_config.yml` 中修改大部份的配置。了解相关配置，可以参考 [配置文档](https://hexo.io/zh-cn/docs/configuration.html)，进行你的基础信息设置。
