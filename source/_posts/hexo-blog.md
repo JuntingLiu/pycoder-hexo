@@ -4,6 +4,7 @@ date: 2018-05-19 10:39:09
 categories: Hexo
 tags:
 - Hexo
+copyright: true
 ---
 
 # 使用 Hexo 搭建静态博客

@@ -6,6 +6,7 @@ categories:
 tags:
 - CSS
 - CSS3
+copyright: true
 ---
 
 ## 绘制我们的企鹅
