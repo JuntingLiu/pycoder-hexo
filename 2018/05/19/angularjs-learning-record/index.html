@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="AngularJS," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="PyCoder" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="AngularJS 初识篇Angular CLI 安装12345678910111213141516# 全局安装$ npm install -g @angular/cli# 检验安装是否成功,出现以下图标就说明成功了$ ng -v    _                      _                 ____ _     ___   / \   _ __   __ _ _   _">
+<meta name="keywords" content="AngularJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AngularJS 学习记录">
+<meta property="og:url" content="http://blog.pycoder.club/2018/05/19/angularjs-learning-record/index.html">
+<meta property="og:site_name" content="PyCoder">
+<meta property="og:description" content="AngularJS 初识篇Angular CLI 安装12345678910111213141516# 全局安装$ npm install -g @angular/cli# 检验安装是否成功,出现以下图标就说明成功了$ ng -v    _                      _                 ____ _     ___   / \   _ __   __ _ _   _">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/735083-22759909e041e978.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/735083-4886b59c3d255e33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-05-19T14:05:36.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AngularJS 学习记录">
+<meta name="twitter:description" content="AngularJS 初识篇Angular CLI 安装12345678910111213141516# 全局安装$ npm install -g @angular/cli# 检验安装是否成功,出现以下图标就说明成功了$ ng -v    _                      _                 ____ _     ___   / \   _ __   __ _ _   _">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/735083-22759909e041e978.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'FXGAV4POVJ',
+      apiKey: '',
+      indexName: 'Index',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"搜索文章","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"${hits} 结果发现在 ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://blog.pycoder.club/2018/05/19/angularjs-learning-record/"/>
+
+
+
+
+
+  <title>AngularJS 学习记录 | PyCoder</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?4731f17b6b61a4c41a8706e5bba08e5b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">PyCoder</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">刘峻廷的博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://blog.pycoder.club/2018/05/19/angularjs-learning-record/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Junting">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="PyCoder">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">AngularJS 学习记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-19T21:00:20+08:00">
+                2018-05-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AngularJS/" itemprop="url" rel="index">
+                    <span itemprop="name">AngularJS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/19/angularjs-learning-record/" class="leancloud_visitors" data-flag-title="AngularJS 学习记录">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="AngularJS-初识篇"><a href="#AngularJS-初识篇" class="headerlink" title="AngularJS 初识篇"></a>AngularJS 初识篇</h2><h3 id="Angular-CLI-安装"><a href="#Angular-CLI-安装" class="headerlink" title="Angular CLI 安装"></a>Angular CLI 安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 全局安装</span><br><span class="line">$ npm install -g @angular/cli</span><br><span class="line"># 检验安装是否成功,出现以下图标就说明成功了</span><br><span class="line">$ ng -v</span><br><span class="line"></span><br><span class="line">    _                      _                 ____ _     ___</span><br><span class="line">   / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|</span><br><span class="line">  / △ \ | &apos;_ \ / _` | | | | |/ _` | &apos;__|   | |   | |    | |</span><br><span class="line"> / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |</span><br><span class="line">/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|</span><br><span class="line">               |___/</span><br><span class="line"></span><br><span class="line">Angular CLI: 1.7.4</span><br><span class="line">Node: 8.11.1</span><br><span class="line">OS: darwin x64</span><br><span class="line">Angular:</span><br></pre></td></tr></table></figure>
+<h3 id="初始化新项目"><a href="#初始化新项目" class="headerlink" title="初始化新项目"></a>初始化新项目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 创建项目成功后，会自动 npm install</span><br><span class="line">$ ng new helloAngular(project name)</span><br><span class="line"></span><br><span class="line"># 启动项目（开启本地服务）</span><br><span class="line">$ ng serve</span><br><span class="line">// or 启动项目，并打开浏览器 （--open or -o）</span><br><span class="line">$ ng serve --open</span><br></pre></td></tr></table></figure>
+<h4 id="ng-serve指令参数含义"><a href="#ng-serve指令参数含义" class="headerlink" title="ng serve指令参数含义"></a><code>ng serve</code>指令参数含义</h4><p><code>ng serve</code> 命令会启动开发服务器，监听文件变化，并在修改这些文件时重新构建此应用。</p>
+<ul>
+<li><code>--open</code> or <code>-o</code> 自动打开浏览器并访问</li>
+<li><code>--prod</code> 指定为生产模式，会自动打包项目</li>
+</ul>
+<h3 id="创建我的第一个组件"><a href="#创建我的第一个组件" class="headerlink" title="创建我的第一个组件"></a>创建我的第一个组件</h3><p>Angular CLI 命令行工具，自带指令集，可以让我们快速开发和遵循 Angular 的开发风格指南。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 创建组件 组件名需要遵循大驼峰命名规则</span><br><span class="line">$ ng generate component ComponentName</span><br><span class="line">// or 简写</span><br><span class="line">$ ng g c ComponentName</span><br></pre></td></tr></table></figure>
+<h3 id="Angular三大核心概念"><a href="#Angular三大核心概念" class="headerlink" title="Angular三大核心概念"></a>Angular三大核心概念</h3><p>Angular最核心的概念是“组件化”,新版本的 Angular 来说，一切都是围绕着“组件化”展开的，组件是 Angular 的核心概念模型。</p>
+<ol>
+<li>Component</li>
+<li>Module</li>
+<li>Route</li>
+</ol>
+<p><img src="https://upload-images.jianshu.io/upload_images/735083-22759909e041e978.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="components.png"></p>
+<p>以下是一个最简单的 Angular 组件定义：</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Component &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span>(&#123;</span><br><span class="line">  selector: <span class="string">'app-root'</span>,</span><br><span class="line">  templateUrl: <span class="string">'./app.component.html'</span>,</span><br><span class="line">  styleUrls: [<span class="string">'./app.component.scss'</span>]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> AppComponent &#123;</span><br><span class="line">  title = <span class="string">'Jun ting'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>@Component：这是一个 Decorator（装饰器），其作用类似于 Java 里面的注解。Decorator 这个语言特性目前（2017-10）处于 Stage 2（草稿）状态，还不是 ECMA 的正式规范。</li>
+<li>selector：组件的标签名，外部使用者可以这样来使用这个组件：<app-root>。默认情况下，ng 命令生成出来的组件都会带上一个 app 前缀，如果你不喜欢，可以在 angular-cli.json 里面修改 prefix 配置项，设置为空字符串将会不带任何前缀。</app-root></li>
+<li>templateUrl：引用外部的 HTML 模板。如果你想直接编写内联模板，可以使用 template，支持 ES6 引入的“模板字符串”写法。</li>
+<li>styleUrls：引用外部 CSS 样式文件，这是一个数组，也就意味着可以引用多份 CSS 文件。</li>
+<li>export class AppComponent：这是 ES6 里面引入的模块和 class 定义方式。</li>
+</ul>
+<h3 id="把-CSS-预编译器改成-SASS"><a href="#把-CSS-预编译器改成-SASS" class="headerlink" title="把 CSS 预编译器改成 SASS"></a>把 CSS 预编译器改成 SASS</h3><p><code>@angular/cli</code> 创建项目的时候没有自动使用 SASS 作为预编译器，我们需要自己手动修改一些配置文件,请按照以下步骤依次修改：</p>
+<p>1、 <code>angular-cli.json</code> 里面的 <code>styles.css</code> 后缀改成 <code>.scss</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">"apps": [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"root"</span>: <span class="string">"src"</span>,</span><br><span class="line">    <span class="attr">"outDir"</span>: <span class="string">"dist"</span>,</span><br><span class="line">    <span class="attr">"assets"</span>: [</span><br><span class="line">      <span class="string">"assets"</span>,</span><br><span class="line">      <span class="string">"favicon.ico"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"index"</span>: <span class="string">"index.html"</span>,</span><br><span class="line">    <span class="attr">"main"</span>: <span class="string">"main.ts"</span>,</span><br><span class="line">    <span class="attr">"polyfills"</span>: <span class="string">"polyfills.ts"</span>,</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"test.ts"</span>,</span><br><span class="line">    <span class="attr">"tsconfig"</span>: <span class="string">"tsconfig.app.json"</span>,</span><br><span class="line">    <span class="attr">"testTsconfig"</span>: <span class="string">"tsconfig.spec.json"</span>,</span><br><span class="line">    <span class="attr">"prefix"</span>: <span class="string">"app"</span>,</span><br><span class="line">    // 这里</span><br><span class="line">    "styles": [</span><br><span class="line">      <span class="string">"styles.scss"</span></span><br><span class="line">    ],</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>后面再使用 ng g c *** 自动创建组件的时候，默认就会生成 .scss 后缀的样式文件了。</p>
+</blockquote>
+<p>2、 <code>angular-cli.json</code> 里面的 <code>styleExt</code> 改成 <code>.scss</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">"defaults": &#123;</span><br><span class="line">  "styleExt": "scss",</span><br><span class="line">  "component": &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、 src 下面<code>.css</code>后缀的文件全修改为<code>.scss</code></p>
+<h4 id="引入-bootstrap、font-awesome"><a href="#引入-bootstrap、font-awesome" class="headerlink" title="引入 bootstrap、font-awesome"></a>引入 bootstrap、font-awesome</h4><p>安装 bootstrap、font-awesome 依赖</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># bootstrap</span><br><span class="line">npm install bootstrap --save</span><br><span class="line"></span><br><span class="line"># font-awesome</span><br><span class="line">npm install font-awesome --save</span><br></pre></td></tr></table></figure>
+<p>在 <code>style.scss</code> 引入 bootstrap、font-awesome 的 css</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> <span class="string">"~bootstrap/dist/css/bootstrap.min.css"</span>;</span><br><span class="line">@<span class="keyword">import</span> <span class="string">"~font-awesome/css/font-awesome.min.css"</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="AngularJS-模板语法"><a href="#AngularJS-模板语法" class="headerlink" title="AngularJS 模板语法"></a>AngularJS 模板语法</h2><p><img src="https://upload-images.jianshu.io/upload_images/735083-4886b59c3d255e33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="模板生成流程图"></p>
+<p>模板是编写 Angular 组件最重要的一环，你至少需要深入理解以下知识点才能玩转 Angular 模板：</p>
+<ol>
+<li>对比各种 JS 模板引擎的设计思路</li>
+<li>Mustache（八字胡）语法， <code>{}</code></li>
+<li>模板内的局部变量</li>
+<li>属性绑定、事件绑定、双向绑定</li>
+<li>在模板里面使用结构型指令 <em>ngIf、</em>ngFor、ngSwitch</li>
+<li>在模板里面使用属性型指令 NgClass、NgStyle、NgModel</li>
+<li>在模板里面使用管道格式化数据</li>
+</ol>
+<h3 id="对比各种-JS-模板引擎的设计思路"><a href="#对比各种-JS-模板引擎的设计思路" class="headerlink" title="对比各种 JS 模板引擎的设计思路"></a>对比各种 JS 模板引擎的设计思路</h3><p><code>什么是模板引擎？</code> 是指利用某种模板语言将页面制成模板，再依据业务逻辑将该模板语言翻译成业务数据，从而生成最终展示页面。 简单的讲就是根据静态HTMl元素和业务逻辑处理的数据结合渲染生成浏览器器需要的页面。</p>
+<ul>
+<li>jQuery -&gt; Handlebars</li>
+<li>React -&gt; jsx 模板写法</li>
+<li>Angular -&gt; 与“指令”紧密结合的模板语法 （vue 也是一样）</li>
+</ul>
+<p>各种模板引擎的唯一目标就是提高开发效率、缩短时间成本。综合来说，无论是哪一种前端模板，大家都比较推崇“轻逻辑”（ logic-less ）的设计思路。</p>
+<p><code>何为“轻逻辑”?</code> 简而言之，所谓“轻逻辑”就是说，你不能在模板里面编写非常复杂的 JavaScript 表达式。比如，Angular 的模板语法就有规定：</p>
+<ul>
+<li>你不能在模板里面 new 对象</li>
+<li>不能使用=、+=、-=这类的表达式</li>
+<li>不能用++、–运算符</li>
+<li>不能使用位运算符</li>
+</ul>
+<p>为什么要“轻逻辑”？</p>
+<ol>
+<li>本身的 Html 是不识别 if 、for 等操作的；模板引擎处于的地位就是帮忙编译转换纯HTMl元素。</li>
+<li>在 HTML 加入复杂的逻辑，会加大模板引擎编译的时间和计算能力；而且也不建议复杂逻辑处理放到HTMl里来做，保证 HTML 的单一纯洁性；使用模板也是来做简单的插值相关的操作</li>
+<li>JS 版的编译器需要在浏览器里面运行，搞得太复杂浏览器拖不动！</li>
+<li>最根本还是<code>模板引擎不够强</code>, 并不是万能的；</li>
+</ol>
+<p>对于 Angular 来说，强调“轻逻辑”还有另一个原因：在组件的整个生命周期里面，模板函数会被执行很多次。你可以想象， Angular 每次要刷新组件的外观的时候，都需要去调用一下模板函数，如果你在模板里面编写了非常复杂的代码，一定会增加渲染时间，用户一定会感到界面有“卡顿”。</p>
+<p>人眼的视觉延迟大约是100ms到400ms之间，如果整个页面的渲染时间超过400ms，界面基本上就卡得没法用了。有一些做游戏的开发者会追求60fps刷新率的细腻感觉，60分之1秒约等于16.7ms，如果 UI 整体的渲染时间超过了16.7ms，就没法达到这个要求了。</p>
+<p>轻逻辑（ logic-less ）带来了效率的提升，也带来了一些不方便，比如很多模板引擎都实现了 if 语句，但是没有实现 else，所以开发者们在编写复杂业务逻辑的时候模板代码会显得非常啰嗦。</p>
+<p>目前来说，并没有完美的方案能同时兼顾运行效率和语法表现能力，这里只能取一个平衡。</p>
+<h3 id="Mustache-语法"><a href="#Mustache-语法" class="headerlink" title="Mustache 语法"></a>Mustache 语法</h3><p>关于 Mustache 语法，双花括号语法,你需要掌握3点:</p>
+<ol>
+<li>它可以获取到组件里面定义的属性值。</li>
+<li>它可以自动计算简单的数学表达式，例如: 加减乘除、取模</li>
+<li>它可以获得方法的返回值。</li>
+</ol>
+<p>插值语法关键代码实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">    欢迎来到&#123;&#123;title&#125;&#125;！</span><br><span class="line"><span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> title = <span class="string">'Mustache 语法'</span>;</span><br></pre></td></tr></table></figure>
+<p>简单的数学表达式求值：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>1 + 5 = &#123;&#123; 1 + 5 &#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>调用组件里面定义的方法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> &#123;&#123; getStr() &#125;&#125; <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> getStr(): <span class="built_in">string</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'调用方法！'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="属性绑定（-属性名-）"><a href="#属性绑定（-属性名-）" class="headerlink" title="属性绑定（[属性名]）"></a>属性绑定（[属性名]）</h3><p>属性绑定是用方括号来做的，写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> [<span class="attr">src</span>]=<span class="string">"imgSrc"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> [<span class="attr">disabled</span>]=<span class="string">"isUnchanged"</span>&gt;</span>是否禁用<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> imgSrc:<span class="built_in">string</span> = <span class="string">'./images.png'</span>;</span><br><span class="line"><span class="keyword">public</span> isUnchanged:<span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br></pre></td></tr></table></figure>
+<p>很明显，这种绑定是单向数据绑定，单一的读取值而已。</p>
+<h3 id="事件绑定-事件名"><a href="#事件绑定-事件名" class="headerlink" title="事件绑定 ( (事件名) )"></a>事件绑定 ( (事件名) )</h3><p>事件绑定是用圆括号来做的，写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"btnClick($event)"</span>&gt;</span>点击事件<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">pubic btnClick(e):<span class="built_in">void</span> &#123;</span><br><span class="line">    alert(<span class="string">'点击事件测试～'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="双向绑定-（-…-）"><a href="#双向绑定-（-…-）" class="headerlink" title="双向绑定 （ [(…)] ）"></a>双向绑定 （ [(…)] ）</h3><p>你经常需要显示数据属性，并在用户作出更改时更新该属性。</p>
+<p>在元素层面上，既要设置元素属性，又要监听元素事件变化。</p>
+<p>双向绑定是通过方括号里面套一个圆括号 <code>[(...)]</code> 来做的，模板写法：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">app-sizer</span> [(<span class="attr">size</span>)]=<span class="string">"fontSizePx"</span>&gt;</span><span class="tag">&lt;/<span class="name">app-sizer</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> fontSizePx:<span class="built_in">number</span> = <span class="number">14</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="模板内的局部变量"><a href="#模板内的局部变量" class="headerlink" title="模板内的局部变量"></a>模板内的局部变量</h3><h3 id="在模板里面使用结构型指令"><a href="#在模板里面使用结构型指令" class="headerlink" title="在模板里面使用结构型指令"></a>在模板里面使用结构型指令</h3><p>Angular 有3个内置的结构型指令：<code>*ngIf</code>、<code>*ngFor</code>、<code>ngSwitch</code>。<code>ngSwitch</code> 的语法比较啰嗦，使用频率小一些, 了解就好。</p>
+<p><code>*ngIf</code> 代码实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngIf</span>=<span class="string">"isShow"</span>&gt;</span>显示还是不显示？<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"toggleShow()"</span>&gt;</span>控制显示隐藏<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> isShow:<span class="built_in">boolean</span>=<span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> toggleShow():<span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.isShow = !<span class="keyword">this</span>.isShow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>*ngFor</code> 代码实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let item of items; let i = index;"</span>&gt;</span></span><br><span class="line">        &#123;&#123;i+1&#125;&#125; - &#123;&#123; item.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> items:<span class="built_in">Array</span>&lt;<span class="built_in">any</span>&gt;=[</span><br><span class="line">    &#123;name:<span class="string">"PyCoder"</span>&#125;,</span><br><span class="line">    &#123;name:<span class="string">"Jun ting"</span>&#125;,</span><br><span class="line">    &#123;name:<span class="string">"EcmaScript"</span>&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
+<p><code>*ngSwitch</code> 代码实例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">ngSwitch</span>]=<span class="string">"mapStatus"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngSwitchCase</span>=<span class="string">"0"</span>&gt;</span>下载中...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngSwitchCase</span>=<span class="string">"1"</span>&gt;</span>正在读取...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> *<span class="attr">ngSwitchDefault</span>&gt;</span>系统繁忙...<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> mapStatus:<span class="built_in">number</span> = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>特别注意：一个 HTML 标签上只能同时使用一个结构型的指令。</p>
+</blockquote>
+<p>因为“结构型”指令会修改 DOM 结构，如果在一个标签上使用多个结构型指令，大家都一起去修改 DOM 结构，到时候到底谁说了算？</p>
+<p>那么需要在同一个 HTML 上使用多个结构型指令应该怎么办呢？有两个办法：</p>
+<ul>
+<li>加一层空的 div 标签进行包裹</li>
+<li>加一层 <code>&lt;ng-container&gt;</code></li>
+</ul>
+<h3 id="在模板里面使用属性型指令"><a href="#在模板里面使用属性型指令" class="headerlink" title="在模板里面使用属性型指令"></a>在模板里面使用属性型指令</h3><p>使用频率比较高的3个内置指令是：<code>NgClass</code>、<code>NgStyle</code>、<code>NgModel</code>。</p>
+<p><code>NgClass</code> 使用案例代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">ngClass</span>]=<span class="string">"currentClasses"</span>&gt;</span>同时批量设置多个样式<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"setCurrentClasses()"</span>&gt;</span>设置<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> currentClasses: [];</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> canSave: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">public</span> isUnchanged: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">public</span> isSpecial: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> setCurrentClasses ():<span class="built_in">void</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>.currentClasses = &#123;</span><br><span class="line">        <span class="string">'saveable'</span>: <span class="keyword">this</span>.canSave,</span><br><span class="line">        <span class="string">'modified'</span>: <span class="keyword">this</span>.isUnchanged,</span><br><span class="line">        <span class="string">'special'</span>: <span class="keyword">this</span>.isSpecial</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    <div>
+    
+        <div>
+
+
+-------------本文结束,感谢您的阅读-------------
+
+
+</div>
+
+        
+    </div>
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/2018/05/19/angularjs-learning-record/">AngularJS 学习记录</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 Junting 的个人博客">Junting</a></p>
+  <p><span>发布时间:</span>2018年05月19日 - 21:05</p>
+  <p><span>最后更新:</span>2018年05月19日 - 22:05</p>
+  <p><span>原始链接:</span><a href="/2018/05/19/angularjs-learning-record/" title="AngularJS 学习记录">http://blog.pycoder.club/2018/05/19/angularjs-learning-record/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://blog.pycoder.club/2018/05/19/angularjs-learning-record/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>
+</div>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+	  $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+	    });
+    });
+</script>
+
+
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/AngularJS/" rel="tag"><i class="fa fa-tag"></i> AngularJS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/19/mac-make-self-workflow/" rel="next" title="Mac - 打造自己的工作流">
+                <i class="fa fa-chevron-left"></i> Mac - 打造自己的工作流
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjYwNS8xMzE0MA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Junting" />
+            
+              <p class="site-author-name" itemprop="name">Junting</p>
+              <p class="site-description motion-element" itemprop="description">滴水穿石,记录点点滴滴，回望曲径通幽处。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/twitchboy" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:coder.junting@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/junting" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#AngularJS-初识篇"><span class="nav-number">1.</span> <span class="nav-text">AngularJS 初识篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular-CLI-安装"><span class="nav-number">1.1.</span> <span class="nav-text">Angular CLI 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化新项目"><span class="nav-number">1.2.</span> <span class="nav-text">初始化新项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ng-serve指令参数含义"><span class="nav-number">1.2.1.</span> <span class="nav-text">ng serve指令参数含义</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建我的第一个组件"><span class="nav-number">1.3.</span> <span class="nav-text">创建我的第一个组件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Angular三大核心概念"><span class="nav-number">1.4.</span> <span class="nav-text">Angular三大核心概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#把-CSS-预编译器改成-SASS"><span class="nav-number">1.5.</span> <span class="nav-text">把 CSS 预编译器改成 SASS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入-bootstrap、font-awesome"><span class="nav-number">1.5.1.</span> <span class="nav-text">引入 bootstrap、font-awesome</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AngularJS-模板语法"><span class="nav-number">2.</span> <span class="nav-text">AngularJS 模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对比各种-JS-模板引擎的设计思路"><span class="nav-number">2.1.</span> <span class="nav-text">对比各种 JS 模板引擎的设计思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mustache-语法"><span class="nav-number">2.2.</span> <span class="nav-text">Mustache 语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性绑定（-属性名-）"><span class="nav-number">2.3.</span> <span class="nav-text">属性绑定（[属性名]）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件绑定-事件名"><span class="nav-number">2.4.</span> <span class="nav-text">事件绑定 ( (事件名) )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向绑定-（-…-）"><span class="nav-number">2.5.</span> <span class="nav-text">双向绑定 （ [(…)] ）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板内的局部变量"><span class="nav-number">2.6.</span> <span class="nav-text">模板内的局部变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在模板里面使用结构型指令"><span class="nav-number">2.7.</span> <span class="nav-text">在模板里面使用结构型指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在模板里面使用属性型指令"><span class="nav-number">2.8.</span> <span class="nav-text">在模板里面使用属性型指令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Junting</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-globe"></i> 访问用户: 
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问量: 
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("RpEw1EhjkayrwmMz9Coekacy-gzGzoHsz", "sRRa5nfrvhJGHDDIfruzCmjc");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
