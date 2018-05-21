@@ -15,7 +15,7 @@ copyright: true
 </div>
 
 ---
-![](https://user-gold-cdn.xitu.io/2018/5/21/1637e5e3f1e4c040?w=3358&h=1704&f=gif&s=477036)
+
 # Echo
 
 这是一个网络应用程序，与我的女朋友一起庆祝 5 月 20 日（意思是“我爱你”）。 ;P 它受 iMessage 中名为 echo 的消息效果的启发。
@@ -25,6 +25,8 @@ copyright: true
 嗯，这就是此作者的原话，满满的撒狗粮 🐶🐶🐶，但是此程序还是很有趣的对不对～所以还是拉下代码，悄悄的 👀 一波（毕竟单身汪，周末也没什么事）
 
 ## 预览
+
+![](https://user-gold-cdn.xitu.io/2018/5/21/1637e5e3f1e4c040?w=3358&h=1704&f=gif&s=477036)
 
 [demo](https://twitchboy.github.io/echo_520/index.html)
 
