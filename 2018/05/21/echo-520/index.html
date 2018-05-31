@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Vue,CSS,CSS3," />
+  <meta name="keywords" content="CSS,CSS3,Vue," />
 
 
 
@@ -89,7 +89,7 @@
 
 
 <meta name="description" content="Echo这是一个网络应用程序，与我的女朋友一起庆祝 5 月 20 日（意思是“我爱你”）。 ;P 它受 iMessage 中名为 echo 的消息效果的启发。 只是让你开心。 嗯，这就是此作者的原话，满满的撒狗粮 🐶🐶🐶，但是此程序还是很有趣的对不对～所以还是拉下代码，悄悄的 👀 一波（毕竟单身汪，周末也没什么事） 预览 demo 将学到的知识点 单一 div 气泡绘制 随机大小">
-<meta name="keywords" content="Vue,CSS,CSS3">
+<meta name="keywords" content="CSS,CSS3,Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Echo">
 <meta property="og:url" content="http://blog.pycoder.club/2018/05/21/echo-520/index.html">
@@ -123,11 +123,11 @@
       author: '博主'
     },
     algolia: {
-      applicationID: 'FXGAV4POVJ',
+      applicationID: '',
       apiKey: '',
-      indexName: 'Index',
+      indexName: '',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"搜索文章","hits_empty":"我们没有找到任何搜索结果: ${query}","hits_stats":"${hits} 结果发现在 ${time} ms"}
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -282,26 +282,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -539,11 +535,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
-          
             <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
           
             <a href="/tags/CSS3/" rel="tag"><i class="fa fa-tag"></i> CSS3</a>
+          
+            <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
           
         </div>
       
@@ -727,10 +723,6 @@
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://lishaoy.net/" title="李少颖" target="_blank">李少颖</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="http://blog.pycoder.club/" title="PyCoder" target="_blank">PyCoder</a>
                   </li>
                 
               </ul>
@@ -977,7 +969,7 @@
     var isfetched = false;
     var isXml = true;
     // Search DB path;
-    var search_path = "";
+    var search_path = "search.xml";
     if (search_path.length === 0) {
       search_path = "search.xml";
     } else if (/json$/i.test(search_path)) {
@@ -1290,19 +1282,6 @@
   </script>
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
 
 
 
