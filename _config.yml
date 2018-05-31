@@ -84,8 +84,13 @@ deploy:
   branch: gh-pages
   message: "站点更新: {{ now('YYYY-MM-DD HH:mm:ss') }})"
 
-# 搜索服务
-algolia:
-  applicationID: 'FXGAV4POVJ'
-  indexName: 'Index'
-  chunkSize: 5000
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
+
+# local search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
