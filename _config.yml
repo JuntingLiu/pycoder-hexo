@@ -88,9 +88,8 @@ deploy:
 ## Plugins: http://hexo.io/plugins/
 plugins: hexo-generate-feed
 
-# local search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+# Algolia Search API Key
+algolia:
+  applicationID: 'NH5U9FJ3EE'
+  apiKey: 'a6c53121db570f7771c0f203ae3be14c'
+  indexName: 'PyCoder'
