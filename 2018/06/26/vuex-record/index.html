@@ -88,19 +88,19 @@
 
 
 
-<meta name="description" content="先附上 Vuex Demo 源码～  Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进">
+<meta name="description" content="Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进行CRUD。所以所谓的“状态管理模式”就">
 <meta name="keywords" content="Vue,Vuex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="玩烂 Vuex">
 <meta property="og:url" content="http://blog.pycoder.club/2018/06/26/vuex-record/index.html">
 <meta property="og:site_name" content="PyCoder">
-<meta property="og:description" content="先附上 Vuex Demo 源码～  Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进">
+<meta property="og:description" content="Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进行CRUD。所以所谓的“状态管理模式”就">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/6/23/1642a81fb7af9544?w=701&h=551&f=png&s=7018">
-<meta property="og:updated_time" content="2018-06-26T13:27:59.909Z">
+<meta property="og:updated_time" content="2018-06-26T13:31:59.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="玩烂 Vuex">
-<meta name="twitter:description" content="先附上 Vuex Demo 源码～  Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进">
+<meta name="twitter:description" content="Vuex 概念篇Vuex 是什么？Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。 什么是“状态管理模式”？从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进行CRUD。所以所谓的“状态管理模式”就">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/6/23/1642a81fb7af9544?w=701&h=551&f=png&s=7018">
 
 
@@ -437,10 +437,7 @@
       
 
       
-        <blockquote>
-<p>先附上<a href="https://github.com/Twitchboy/Vue-SSR-Demo" target="_blank" rel="noopener"> Vuex Demo </a>源码～</p>
-</blockquote>
-<h2 id="Vuex-概念篇"><a href="#Vuex-概念篇" class="headerlink" title="Vuex 概念篇"></a>Vuex 概念篇</h2><h3 id="Vuex-是什么？"><a href="#Vuex-是什么？" class="headerlink" title="Vuex 是什么？"></a>Vuex 是什么？</h3><p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用<strong>集中式存储管理应用的所有组件的状态</strong>，并以相应的<strong>规则</strong>保证状态以一种可预测的方式发生变化。</p>
+        <h2 id="Vuex-概念篇"><a href="#Vuex-概念篇" class="headerlink" title="Vuex 概念篇"></a>Vuex 概念篇</h2><h3 id="Vuex-是什么？"><a href="#Vuex-是什么？" class="headerlink" title="Vuex 是什么？"></a>Vuex 是什么？</h3><p>Vuex 是一个专为 Vue.js 应用程序开发的<strong>状态管理模式</strong>。它采用<strong>集中式存储管理应用的所有组件的状态</strong>，并以相应的<strong>规则</strong>保证状态以一种可预测的方式发生变化。</p>
 <h3 id="什么是“状态管理模式”？"><a href="#什么是“状态管理模式”？" class="headerlink" title="什么是“状态管理模式”？"></a>什么是“状态管理模式”？</h3><p>从软件设计的角度，就是以一种统一的约定和准则，对全局共享状态数据进行管理和操作的设计理念。你必须按照这种设计理念和架构来对你项目里共享状态数据进行CRUD。所以所谓的“状态管理模式”就是一种软件设计的一种架构模式（思想）。</p>
 <h3 id="为什么需要这种“状态管理模式”应用到项目中呢？"><a href="#为什么需要这种“状态管理模式”应用到项目中呢？" class="headerlink" title="为什么需要这种“状态管理模式”应用到项目中呢？"></a>为什么需要这种“状态管理模式”应用到项目中呢？</h3><p>现如今，流行组件化、模块化开发，多人开发各自组件的时候，不难保证各个组件都是唯一性的，多个组件共享状态肯定是存在的，共享状态又是谁都可以进行操作和修改的，这样就会导致<strong>所有对共享状态的操作都是不可预料的</strong>，后期出现问题，进行 debug 也是困难重重，往往我们是尽量去避免全局变量。</p>
 <p>但大量的业务场景下，不同的模块（组件）之间确实需要共享数据，也需要对其进行修改操作。也就引发软件设计中的矛盾：<strong>模块（组件）之间需要共享数据</strong> 和 <strong>数据可能被任意修改导致不可预料的结果</strong>。</p>
