@@ -8,8 +8,6 @@ tags:
 copyright: true
 ---
 
-> 先附上[ Vuex Demo ](https://github.com/Twitchboy/Vue-SSR-Demo)源码～
-
 ## Vuex 概念篇
 
 ### Vuex 是什么？
