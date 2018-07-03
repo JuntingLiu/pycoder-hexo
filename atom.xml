@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.pycoder.club/"/>
-  <updated>2018-06-26T13:31:59.927Z</updated>
+  <updated>2018-07-03T00:18:16.559Z</updated>
   <id>http://blog.pycoder.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript 忍者秘籍阅读记录</title>
+    <link href="http://blog.pycoder.club/2018/07/03/javascript-ninja/"/>
+    <id>http://blog.pycoder.club/2018/07/03/javascript-ninja/</id>
+    <published>2018-07-03T00:12:08.000Z</published>
+    <updated>2018-07-03T00:18:16.559Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="第一部分、准入训练"><a href="#第一部分、准入训练" class="headerlink" title="第一部分、准入训练"></a>第一部分、准入训练</h2><h3 id="第一章、进入忍者世界"><a href="#第一章、进入忍者世界" class="headerlink" title="第一章、进入忍者世界"></a>第一章、进入忍者世界</h3><h4 id="通体介绍"><a href="#通体介绍" class="headerlink" title="通体介绍"></a>通体介绍</h4><p>JavaScript 库的产生是用来解决浏览器之间的差异和兼容性的，不同的库虽然在方法、内容和复杂性方面有很大的差异，但唯一不变的是：<strong>它们需要简单而易用，产生最少开销，并能兼容所有浏览器，这些都是我们所希望的。</strong></p><p>通过了解如何构建最优秀的 JavaScript 库，可以为我们提供很好的洞察力，从而编写自己的代码来实现这些目标。</p><p>一个 JavaScript 库的组成可以分为三个方面：</p><ol><li>JavaScript 语言的高级使用。</li><li>跨浏览器代码的精心构建。</li><li>当前能够聚众合一的最佳实践应用。</li></ol><h5 id="理解-JavaScript-语言"><a href="#理解-JavaScript-语言" class="headerlink" title="理解 JavaScript 语言"></a>理解 JavaScript 语言</h5><p>JavaScript 中， <strong>对象</strong>、<strong>函数</strong>和<strong>闭包</strong>有着很密切的关系。理解三个概念之间的牢固关系，可以大大提高我们的 JavaScript 编程能力，为我们进行任意类型程序的开发打下坚实的基础。</p><p>另外，<strong>定时器</strong> 和 <strong>正则表达式</strong> 需要充分的对其了解和利用，熟练掌握定时器如何在浏览器内运行，可以让我们有能力解决复杂的编码任务，如长时间运行的计算和平滑的动画。而理解正则表达式是如何工作的，可以让我们简化原本相当复杂的代码片段。</p><blockquote><p>学会如何高效使用高级语言特性，以及如何发挥其最大的优势，将代码质量提升到更高的水平。提升我们运用这些概念和特性的能力，提升我们的理解力，熟练掌握如何创建任意类型的 JavaScript 应用程序。这些基础知识，将为我们开始编写稳定跨浏览器代码的道路尊定坚实的基础。</p></blockquote><h5 id="跨浏览器注意事项"><a href="#跨浏览器注意事项" class="headerlink" title="跨浏览器注意事项"></a>跨浏览器注意事项</h5><p>权衡支持各种浏览器的成本和收益。主要考虑以下几点：</p><ul><li>目标受众的期望和需求</li><li>浏览器的市场份额</li><li>支持浏览器所需要的工作量</li></ul><h5 id="当前最佳实践"><a href="#当前最佳实践" class="headerlink" title="当前最佳实践"></a>当前最佳实践</h5><ul><li>测试</li><li>性能分析</li><li>调试技巧</li></ul><p>大量的测试技术和测试用例，以确保代码的运行符合我们的预期。<br>功能稳定，平台稳定，接下来就是对代码的性能分析，从而提高代码质量。</p><p>以下是一个简单的收集性能信息的代码：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">start = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> n = <span class="number">0</span>; n &lt; maxCount; n++) &#123;</span><br><span class="line">    <span class="comment">/*功能测试代码*/</span></span><br><span class="line">&#125;</span><br><span class="line">elapsed = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime() - start;</span><br><span class="line">assert(<span class="literal">true</span>, <span class="string">"Measured time: "</span> + elapsed)</span><br></pre></td></tr></table></figure><p>通过上述代码，来记录代码执行时间，以 <code>maxCount</code> 来控制代码执行次数，反复的试验，获取可衡量的值。</p><h5 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h5><ul><li>跨浏览器的 Web 应用程序开发是困难的</li><li>为了圆满完成跨浏览器开发，不仅要掌握 JavaScript 语言，还要全面了解浏览器以及它们的怪异模式和矛盾，并要具备当前最佳实践方面的良好基础。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;第一部分、准入训练&quot;&gt;&lt;a href=&quot;#第一部分、准入训练&quot; class=&quot;headerlink&quot; title=&quot;第一部分、准入训练&quot;&gt;&lt;/a&gt;第一部分、准入训练&lt;/h2&gt;&lt;h3 id=&quot;第一章、进入忍者世界&quot;&gt;&lt;a href=&quot;#第一章、进入忍者世界&quot; cla
+      
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://blog.pycoder.club/categories/JavaScript/"/>
+    
+    
+      <category term="JavaScript" scheme="http://blog.pycoder.club/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>玩烂 Vuex</title>
@@ -64,11 +89,11 @@
       <category term="JavaScript" scheme="http://blog.pycoder.club/categories/JavaScript/"/>
     
     
-      <category term="Vue" scheme="http://blog.pycoder.club/tags/Vue/"/>
-    
       <category term="CSS" scheme="http://blog.pycoder.club/tags/CSS/"/>
     
       <category term="CSS3" scheme="http://blog.pycoder.club/tags/CSS3/"/>
+    
+      <category term="Vue" scheme="http://blog.pycoder.club/tags/Vue/"/>
     
   </entry>
   
