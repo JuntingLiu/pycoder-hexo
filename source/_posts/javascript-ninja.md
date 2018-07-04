@@ -66,3 +66,264 @@ assert(true, "Measured time: " + elapsed)
 
 * 跨浏览器的 Web 应用程序开发是困难的
 * 为了圆满完成跨浏览器开发，不仅要掌握 JavaScript 语言，还要全面了解浏览器以及它们的怪异模式和矛盾，并要具备当前最佳实践方面的良好基础。
+
+### 第二章、利用测试和调试武装自己
+
+掌握 JavaScript 调试，可以提高代码排查问题的能力、提高代码编写速度、理解代码运行的过程，所以掌握代码调试是程序员必备的能力之一。
+
+#### JavaScript 调试代码的两个重要方法：
+
+1. 日志记录
+2. 断点，特定的代码上暂停脚本的执行，从暂停浏览器运行，获取当前代码的状态。包括所有可访问的变量、上下文以及作用域链
+
+> `alert` 函数，也是用于调试的一种方法，但是 `alert` 有其一定的局限性，只能简单的验证变量的值，随着浏览器的调试工具的出现和飞速发展，`alert` 代码调试已被 `console.log` 替代，不推荐使用。
+
+#### 测试
+
+> 篱笆筑的牢，邻居处得好。Web应用程序也是如此，不管是何种编程准则，“好”的测试铸就好的代码。
+
+##### 测试用例
+
+优秀的测试用例具有三个特征：
+
+1. 可重用性（repeatability）—— 测试结果应该是高度可再生的。
+2. 简单性（simplicity）—— 测试应该只专注于测试一件事。
+3. 独立性（independence）—— 测试用例应该独立执行，不依赖于另外一个测试结果。
+
+构建测试的主要两种方法：**解构性测试** 和 **构建性测试**。
+
+* 解构性测试用例（deconstructive test case）—— 解构型测试用例，在消弱代码隔离时进行创建，以消除任何不恰当的问题。
+* 构建性测试用例（constructive test case）—— 构建性测试用例，从一个熟知的良好精简场景开始，构建用例，直到能够重现 bug 为止。针对某一个功能开展构建测试用例。
+
+##### 测试框架
+
+JavaScript 测试框架主要功能涵盖：
+
+1. 能够模拟浏览器行为 （单击按键等）
+2. 测试交互式控制（暂停和恢复测试）
+3. 处理异步测试超时问题
+4. 能够过滤哪些会被执行的测试
+
+比较老的测试框架： Qunit（单元测试框架）、YUI Test （构建并开发的测试框架）、JsUnit（Java Junit 测试框架在 JavaScript 语言的体验，不支持新的 API）
+
+目前流行的测试框架：Mocha、Jasmine、Jest...
+
+**测试里的一些基本知识：**
+
+* **测试套件**，主要目的是聚合代码中所有单个测试，将其组合成为一个单位，这样它们可以批量运行，提供一个可以轻松反复运行的单一资源。
+* **断言**，单元测试框架的核心是断言方法，通常叫 `assert()`。该方法接收一个值，需要断言的值，以及一个表示该断言目的的描述。如果该值执行结果为 true，断言通过。否则断言失败。
+
+##### 实现一个简单 `assert()`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Suite</title>
+    <style>
+        /* 定义断言结果样式 */
+        #results li.pass{ color: green; }
+        #results li.fail{ color: red; }
+    </style>
+</head>
+<body>
+<ul id="results"></ul>
+<script>
+    /**
+    * 断言函数
+    * @param {Boolean} value 需要断言的值
+    * @param {String} desc 断言目的描述
+    */
+    function assert(value, desc) {
+        var li = document.createElement("li");
+        li.className = value ? "pass" : "fail";
+        li.appendChild(document.createTextNode(desc));
+        document.getElementById("results").appendChild(li);
+    }
+    // 使用断言测试
+    window.onload = function () {
+        assert(true, 'The test suite is running.');
+        assert(false, "Fail");
+    }
+</script>
+</body>
+</html>
+
+```
+
+##### 测试组
+
+测试组就是代表一组断言的集合。一个测试组代表某一个特定的任务，而任务里又有很多划分的一个个单一的小任务。
+
+在测试组里任何一个断言失败，都会终止程序，标记整个测试组为失败。
+
+**测试分组实现：**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Suite</title>
+    <style>
+        /* 定义断言结果样式 */
+        #results li.pass{ color: green; }
+        #results li.fail{ color: red; }
+    </style>
+</head>
+<body>
+<ul id="results"></ul>
+<script>
+    (function(){
+        var results;
+        this.assert = function assert(value, desc) {
+            var li = document.createElement("li");
+            li.className = value ? "pass" : "fail";
+            li.appendChild(document.createTextNode(desc));
+            results.appendChild(li);
+            // 一处断言失败，整个测试组都为失败
+            if (!value) {
+                li.parentNode.parentNode.className = "fail"
+            }
+            return li;
+        };
+        this.test = function test (name, fn) {
+            results = document.getElementById("results");
+            results = assert(true, name).appendChild(
+                document.createElement('ul')
+            );
+            fn();
+        };
+    })();
+
+    // 使用断言测试
+    window.onload = function () {
+        test("A test", function () {
+            assert(true, 'First assertion completed.');
+            assert(true, "Second assertion completed.");
+            assert(true, "Third assertion completed.");
+        });
+
+        test("B test", function () {
+            assert(true, 'First assertion completed.');
+            assert(false, "Second assertion failed.");
+            assert(true, "Third assertion completed.");
+        });
+
+        test("C test", function () {
+            assert(null, 'fail.');
+            assert(5, "pass.");
+        });
+    }
+</script>
+</body>
+</html>
+
+```
+
+##### 异步测试
+
+异步测试多数使用场景如 Ajax 请求 和 动画。处理异步测试，需要遵循简单的步骤：
+
+1. 将依赖相同的异步操作的断言组合成一个统一的测试组。
+2. 每个测试需要放在一个队列上，在先前其他的测试组完成运行之后再运行。
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Suite</title>
+    <style>
+        /* 定义断言结果样式 */
+        #results li.pass{ color: green; }
+        #results li.fail{ color: red; }
+    </style>
+</head>
+<body>
+<ul id="results"></ul>
+<script>
+    (function(){
+        var queue = [], // 接受测试组的队列
+            paused = false, // 是否执行断言的标志
+            results;
+        // 接收一个包含一个多个断言的函数，可以身同步的也是可以是异步的。一并放置在队列中等待执行
+        this.test = function test (name, fn) {
+            queue.push(function () {
+                results = document.getElementById("results");
+                results = assert(true, name).appendChild(
+                    document.createElement('ul')
+                );
+                fn();
+            });
+            console.log('队列：', queue)
+            runTest();
+        };
+
+        // test 函数内部调用，通知该测试套件暂停执行测试，直到测试组完成。
+        this.pause = function () {
+            paused = true;
+        };
+
+        // 恢复测试，经过短暂的延迟，进行下一个测试的运行
+        this.resume = function () {
+            paused = false;
+            setTimeout(runTest, 1)
+        };
+
+        // 执行测试
+        function runTest () {
+            if (!paused && queue.length) {
+                // 移除队列第一个参数，并执行测试
+                queue.shift()();
+                // 检测是否测试套件还有任务，判断是否暂停测试，不暂停就继续执行
+                if (!paused) {
+                    resume();
+                }
+            }
+        }
+
+        this.assert = function assert(value, desc) {
+            var li = document.createElement("li");
+            li.className = value ? "pass" : "fail";
+            li.appendChild(document.createTextNode(desc));
+            results.appendChild(li);
+            // 一处断言失败，整个测试组都为失败
+            if (!value) {
+                li.parentNode.parentNode.className = "fail"
+            }
+            return li;
+        };
+    })();
+
+    // 使用断言测试
+    window.onload = function () {
+        test("Async test #1", function () {
+            pause();
+            setTimeout(function() {
+                assert(true, 'First assertion completed.');
+                resume();
+            }, 1000)
+        });
+
+        test("Async test #2", function () {
+            pause();
+            setTimeout(function() {
+                assert(true, 'Second assertion completed.');
+                resume();
+            }, 1000)
+        });
+    }
+</script>
+</body>
+</html>
+
+```
