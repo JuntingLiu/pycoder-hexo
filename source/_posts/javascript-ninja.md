@@ -516,3 +516,89 @@ o.whatever()
 一个方法所属的对象在该方法体内可以通过 `this` 的形式进行引用。将函数作为对象的一个方法（method）进行调用时，该对象就变成了函数上下文，并且在函数内部可以以 `this` 参数的形式进行访问。这是 JavaScript 作为面向对象代码进行编写的主要手段之一。（构造器是另外一个。）
 
 作为“方法”进行调用，此时函数的上下文指向的是其所属对象。
+
+##### 作为构造器进行调用
+
+构造器函数的声明和其他函数声明一样，不同的地方是在于如何调用该函数。
+
+**构造器的超能力**
+
+将函数作为构造器进行调用，是 JavaScript 的一个超级特性，因为构造器调用时，如下特殊行为就会发生：
+
+* 创建一个新的空对象。
+* 传递给构造器的对象是 this 参数，从而成为构造器的函数上下文。（新创建的控对象）
+* 如果没有显式的返回值，新创建的对象则作为构造器的返回值进行返回。
+
+**构造器的目的**是要创建一个新对象并对其进行设置，然后将其作为构造器的返回值进行返回。任何干扰这种意图的函数，都不适合作为构造器。
+
+```js
+function Ninja() {
+    this.skulk = function () {return this;}
+}
+
+var ninja1 = new Ninja();
+var ninja2 = new Ninja();
+
+assert(ninja1.skulk() === ninja1, "The 1st ninja is skulking")
+assert(ninja2.skulk() === ninja2, "The 2nd ninja is skulking")
+```
+上述代码，创建一个名为 Ninja 函数，用于构建忍者（ninjas）。使用 new 关键字进行调用时，将会创建一个空对象实例，并作为 this 参数传递给该函数。
+
+**构造器编码注意事项**
+
+* 函数和方法的命名通常以动词开头，来描述它们所做的事情（skulk()）,并且以小写字母开头。构造器命名通常是由一个描述所构造对象的名词来描述，并且以大写字母开发。（Ninja()）
+* 使用构造器进行调用时，必须使用关键字 new 进行
+
+
+##### **使用 apply() 和 call() 方法进行调用**
+
+函数调用方式之间的**主要差异**是：作为 this 参数传递给执行函数的上下文对象之间的区别。作为方法进行调用，该上下文是方法的拥有者；作为全局函数进行调用，其上下文永远是 window；作为构造器进行调用，其上下文对象则是新创建的对象实例。
+
+每个函数都有 apply() 和 call() 方法，用来显示的指定任何一个对象作为其函数上下文。也就是所谓绑定其 this 指向。
+
+**apply() 和 call() 功能一样，区别在于参数的传入方式：**
+
+* aplly() 接收两个参数，一个参数作为函数上下文的对象；另一个是作为函数参数所组成的数组。
+* call() 给函数传入的参数是一个参数列表，而不是单个数组
+
+```js
+function juggle() {
+    var result = 0;
+    for (var n = 0; n < arguments.length; n++) {
+        result += arguments[n];
+    }
+
+    this.result = result; // 特定的使用 this，为了更好的指明函数上下文
+}
+
+var ninja1 = {}
+var ninja2 = {}
+
+juggle.apply(ninja1, [1, 2, 3, 4])
+juggle.call(ninja2, 5, 6, 7, 8)
+
+assert(ninja1.result === 10, 'juggle via apply')
+assert(ninja2.result === 26, 'juggle via call')
+```
+
+**在回调中强制指定函数上下文**
+
+从一个遍历数组条目并执行操作的简单函数出发，来了解下 “命令式编程” 和 “函数式编程”：
+
+* 命令式编程，通常是讲数组传递给一个方法，并使用 for 循环语句遍历每一个条目，然后再对每个条目进行执行操作
+
+```js
+function arrayEach(collection) {
+    for (var i = 0; i < collection.length; i++) {
+        /* do something to collection[i]*/
+    }
+}
+```
+
+* 函数式编程，则是创建一个函数来执行单个条目，并将每个条目都传递给该函数。
+
+```js
+function arrayEach(item) { /* do something to item */ }
+```
+
+两者之间的区别在于思维层面： 函数是程序的构件块而不是命令式语句。
